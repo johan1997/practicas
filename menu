@@ -6,20 +6,23 @@ ejecicios resueltos
 #include "stdlib.h"
 #include <string>
 #include "math.h"
+#define max 100
 using namespace std;
 void nomap(string palabra,string palbra2);
 int fact(int num);
 float serie(int b);
+void llenarvec(float v[],int lim);
+void invertir(float v[],int lim);
 void main()
 {int opcion,fac,num,b;
-float ser;
+float ser,v[max],lim;
  string palabra,palabra2,cambio;
  do
  {cout<<"..............menu...................."<<endl;
   cout<<" 1.-cambiar posicion nombre y apellido"<<endl;
   cout<<" 2.-calcular factorial de un numero"<<endl;
-  cout<<" 3.-cambiar posicion nombre y apellido"<<endl;
-  cout<<" 4.-cambiar posicion nombre y apellido"<<endl;
+  cout<<" 3.-base y exponente factorial"<<endl;
+  cout<<" 4.-vector de forma ascendente"<<endl;
   cout<<" 5.-cambiar posicion nombre y apellido"<<endl;
   cout<<"0.-salir"<<endl;
   cout<<" introdusca una opcion"<<endl;
@@ -56,6 +59,15 @@ float ser;
 		break;
 
    case 4:
+	   do
+	   {cout<<"ingrece cuantos termino tendra el vector"<<endl;
+	    cin>>lim;
+	   }while(lim<1|| lim>max);
+	   llenarvec(v, lim);
+	   cout<<endl;
+	   invertir( v, lim);
+
+	   break;
    case 5:
    case 6:
 	   cout<<"salir";
@@ -72,10 +84,14 @@ float ser;
 void nomap(string palabra,string palabra2)
 {   
 	string cambio ;
-	cambio=palabra2+' '+palabra;
+	palabra.swap(palabra2);
+
+	cambio=palabra+' '+palabra2;
     cout<<endl;
     cout<<cambio;
-   
+  
+	palabra.swap(palabra2);
+	cout<<palabra;
 }
 
 int fact(int num)
@@ -100,3 +116,23 @@ float serie(int b)
      }
   return r;
 }
+void llenarvec(float v[],int lim)
+{for(int i=0;i<lim;i++)
+ { cout<<"v["<<i+1<<"]=";
+   cin>>v[i];
+ }
+}
+void invertir(float v[],int lim)
+{float aux;
+int i,j;
+for( i=0;i<lim-1;i++)
+  for( j=i+1;j<lim;j++)
+	  if(v[j]<v[i])
+	 { aux=v[i];
+      v[i]=v[j];
+	  v[j]=aux;
+     }
+   for(int k=0;k<lim;k++)
+     cout<<v[k]<<" ";
+}
+
