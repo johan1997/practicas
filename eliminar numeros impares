@@ -1,0 +1,35 @@
+# practicas
+ejecicios resueltos
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "math.h"
+using namespace std;
+
+void main ()
+{ int n,r,c;
+ float s=0 ,i=0;
+do
+{
+ cout<<"ingrese  numero";
+ cin>>n;
+}while(n<0);
+
+ while(n>0)
+ { r= n%10;
+   if(r%2==0)
+   {s=s+ (r*pow(10,i));
+   i++;
+   }
+   n=n/10;
+ }
+ if(n%2==0)
+	 s=s+(n*pow(10,i));
+ cout<<"el numero sin impares es "<<s;
+  getch();
+}
+
+
+
+
