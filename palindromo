@@ -1,0 +1,25 @@
+# practicas
+ejecicios resueltos
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#include "stdlib.h"
+#include "math.h"
+using namespace std;
+
+void main ()
+{ int longitud;
+ string palabra,palabra2;
+ cout<<"ingresse palabra"<<endl;
+ getline(cin,palabra);
+ longitud= palabra.length();
+ for ( int i = 0; i<longitud/2 ; i++ )
+{ if( palabra.at(i)!= palabra.at(longitud-1-i))
+ cout<<"no es un palindromo"<<endl;
+ break;}
+ cout<<"es un palindromo"<<endl;
+
+  
+ getch();
+}
