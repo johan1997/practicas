@@ -1,0 +1,35 @@
+# practicas
+ejecicios resueltos
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#include "stdlib.h"
+#include "math.h"
+using namespace std;
+
+void main ()
+{ int longitud;
+ string palabra,palabra2;
+ cout<<"ingresse palabra"<<endl;
+ cin>>palabra;
+ cout<<"ingresse palabra 2"<<endl;
+ cin>>palabra2;
+ //comparando palabras//
+ if (palabra.compare(palabra2)==0)
+ {cout<< palabra <<"es igual a "<<palabra2 << endl;}
+ else
+ cout<< palabra <<" no es igual a "<<palabra2 << endl;
+
+ cout<<"sustrayendo palabra:"<<palabra.substr(2,9)<<endl;
+ //calculando cuantos caracteres tiene la frace//
+ longitud= palabra.length();
+ //mostrando caracteres especificos//
+
+ for ( int i = 0; i<longitud ; i++ )
+        cout << palabra.at(i) << endl;
+	getch();
+
+    
+}
+
