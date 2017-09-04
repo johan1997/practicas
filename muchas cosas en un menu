@@ -1,0 +1,53 @@
+# practicas
+ejecicios resueltos
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include <string>
+using namespace std;
+
+void main()
+{int opcion;
+ string palabra,palabra2,cambio;
+ do
+ {cout<<"..............menu...................."<<endl;
+  cout<<" 1.-cambiar posicion nombre y apellido"<<endl;
+  cout<<" 2.-cambiar posicion nombre y apellido"<<endl;
+  cout<<" 3.-cambiar posicion nombre y apellido"<<endl;
+  cout<<" 4.-cambiar posicion nombre y apellido"<<endl;
+  cout<<" 5.-cambiar posicion nombre y apellido"<<endl;
+  cout<<"0.-salir"<<endl;
+  cout<<" introdusca una opcion"<<endl;
+  cin>>opcion;
+  switch(opcion)
+  {case 1:
+   cout<<"ingrese el nombre"<<endl;
+   cin>>palabra;
+   cout<<endl;
+   cout<<"ingrese el apellido"<<endl;
+   cin>>palabra2;
+    cout<<endl;
+   cambio=palabra2+' '+palabra;
+   cout<<endl;
+   cout<<cambio;
+   cout<<endl;
+   break;
+   case 2:
+
+   case 3:
+   case 4:
+   case 5:
+   case 6:
+	   cout<<"salir";
+	   break;
+
+   default:
+	   cout<<"error";
+	   break;
+  }
+  
+ }while(opcion !=0);
+ getch();
+}
+
