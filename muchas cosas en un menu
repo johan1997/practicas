@@ -6,14 +6,15 @@ ejecicios resueltos
 #include "stdlib.h"
 #include <string>
 using namespace std;
-
+void nomap(string palabra,string palbra2);
+int fact(int num);
 void main()
-{int opcion;
+{int opcion,fac,num;
  string palabra,palabra2,cambio;
  do
  {cout<<"..............menu...................."<<endl;
   cout<<" 1.-cambiar posicion nombre y apellido"<<endl;
-  cout<<" 2.-cambiar posicion nombre y apellido"<<endl;
+  cout<<" 2.-calcular factorial de un numero"<<endl;
   cout<<" 3.-cambiar posicion nombre y apellido"<<endl;
   cout<<" 4.-cambiar posicion nombre y apellido"<<endl;
   cout<<" 5.-cambiar posicion nombre y apellido"<<endl;
@@ -27,13 +28,20 @@ void main()
    cout<<endl;
    cout<<"ingrese el apellido"<<endl;
    cin>>palabra2;
-    cout<<endl;
-   cambio=palabra2+' '+palabra;
    cout<<endl;
-   cout<<cambio;
+   nomap(palabra, palabra2);
    cout<<endl;
+  
    break;
    case 2:
+	   do
+	   {cout<<"de que numero desea su factorial"<<endl;
+	    cin>>num;
+	   }while(num<0);
+	   fac=fact( num);
+	   cout<<"el factoria es: "<<fac;
+	    cout<<endl;
+	   break;
 
    case 3:
    case 4:
@@ -49,5 +57,26 @@ void main()
   
  }while(opcion !=0);
  getch();
+}
+void nomap(string palabra,string palabra2)
+{   
+	string cambio ;
+	cambio=palabra2+' '+palabra;
+    cout<<endl;
+    cout<<cambio;
+   
+}
+
+int fact(int num)
+{ int fac,p=1;
+  if(num==0)
+	  fac=1;
+  else
+	 { for(int i=1;i<=num;i++)
+       {p=p*i;} 
+   fac=p;
+     }
+    
+  return fac;
 }
 
